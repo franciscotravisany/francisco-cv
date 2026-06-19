@@ -312,35 +312,15 @@ img { display: block; max-width: 100%; }
 .hero-photo {
   width: 224px; height: 266px;
   border-radius: 30px;
-  object-fit: contain;
-  object-position: center center;
-  background: #0d1b3e;
+  object-fit: cover;
+  object-position: center 20%;
   border: 4px solid var(--gold);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 0 4px var(--gold), var(--shadow-lg);
   position: relative;
   z-index: 1;
 }
 .photo-ring {
-  position: absolute;
-  width: 258px; height: 300px;
-  border-radius: 38px;
-  border: 2px solid rgba(201,168,76,.2);
-}
-.photo-ring::before {
-  content: '';
-  position: absolute;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--gold);
-  box-shadow: 0 0 8px rgba(201,168,76,0.6);
-  top: 50%; left: 50%;
-  margin: -6px 0 0 -6px;
-  transform-origin: 0 0;
-  animation: orbit-dot 7s linear infinite;
-}
-@keyframes orbit-dot {
-  0%   { transform: rotate(0deg)   translate(152px) rotate(0deg); }
-  100% { transform: rotate(360deg) translate(152px) rotate(-360deg); }
+  display: none;
 }
 
 /* Placeholder while photo not added */
@@ -860,6 +840,11 @@ a.ci-val:hover { color: var(--gold); text-decoration: underline; }
   font-size: .82rem;
   color: rgba(255,255,255,.4);
 }
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .footer-linkedin {
   display: inline-flex;
   align-items: center;
@@ -876,6 +861,10 @@ a.ci-val:hover { color: var(--gold); text-decoration: underline; }
   color: var(--white);
   border-color: #0A66C2;
   background: #0A66C2;
+}
+.footer-linkedin.github:hover {
+  border-color: #333;
+  background: #333;
 }
 
 .back-top {
